@@ -20,7 +20,7 @@ jobs:
         java-version: '17'
 
     - name: compile Java Program
-      run: javac * .java
+      run: javac *.java
 
     - name: Run Java Program
       run: java Main
