@@ -16,4 +16,5 @@ jobs:
       uses: ./.github/actions/java-build
 
     - name: Print Output
-      run: echo "Output: ${{ steps.custom-action.outputs.output }}"
+      run: |
+        echo "Output: ${{ steps.custom-action.outputs.output }}"
