@@ -13,14 +13,11 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
-    - name: Set up Java 
+    - name: Set up Java
       uses: actions/setup-java@v4
       with:
         distribution: 'temurin'
         java-version: '17'
-
-    - name: compile Java Program
-      run: javac *.java
 
     - name: Run Custom Action
       uses: ./.github/actions/java-build
