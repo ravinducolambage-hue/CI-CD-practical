@@ -1,0 +1,13 @@
+name:"Java Build Action"                                        
+description:"Compile and run Java program"                
+
+runs:                                   
+  using: "composite"                                         
+
+  steps:                                                  
+      run: javac Main.java
+      shell: bash                                                  
+
+    - name: Run Java 
+      run: java Main
+      shell: bash
