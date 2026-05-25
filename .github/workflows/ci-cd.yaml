@@ -1,25 +1,16 @@
-name: Java CI Pipeline
+name: output Example
 
 on:
   push:
-    branches: 
-      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v6
-
-    - name: Set up Java
-      uses: actions/setup-java@v5
-      with:
-        distribution: 'temurin'
-        java-version: '17'
-
     - name: Run Custom Action
+      id: custom-action
       uses: ./.github/actions/java-build
-      with:
-        file-name: Main
+
+    - name: Print Output
+      run: echo "Output: ${{ steps.custom-action.outputs.output }}"

@@ -1,20 +1,20 @@
 name: "Java Runner"
 description: "Compile and run Java program"
 
-inputs:
-  file-name:
-    description: "Java file Name"
-    required: true
-
+outputs:
+  output:
+    description: "Output of the Java program"
+    value: ${{ steps.run-java.outputs.output }}
 
 runs:
   using: "composite"
   
   steps:
     - name: Compile Java File
-      run: javac ${{ inputs.file-name }}.java
+      run: javac Main.java
       shell: bash
 
     - name: Run Java Program
-      run: java ${{ inputs.file-name }}
+      id: run-java
+      run: echo "output=$(java Main)" >> $GITHUB_OUTPUT
       shell: bash
