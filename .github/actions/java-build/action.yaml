@@ -16,5 +16,5 @@ runs:
 
     - name: Run Java Program
       id: run-java
-      run: echo "output=$(java Main)" >> $GITHUB_OUTPUT
       shell: bash
+      run: echo "output=$(java Main)" >> $GITHUB_OUTPUT
