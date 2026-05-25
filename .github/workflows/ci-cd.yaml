@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v6
+
     - name: Run Custom Action
       id: custom-action
       uses: ./.github/actions/java-build

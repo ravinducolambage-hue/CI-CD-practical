@@ -8,11 +8,10 @@ outputs:
 
 runs:
   using: "composite"
-  
   steps:
     - name: Compile Java File
-      run: javac Main.java
       shell: bash
+      run: javac Main.java
 
     - name: Run Java Program
       id: run-java
